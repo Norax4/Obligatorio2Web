@@ -1,0 +1,66 @@
+﻿@page
+@model Obligatorio2Web.Pages.Habitaciones.ListaHabitacionesModel
+@{
+    ViewData["Title"] = "Lista de Habitaciones";
+}
+
+<div class="card">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-sm-6">
+                <h2 class="text-info">Lista de Habitaciones</h2>
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        @if (Model.Habitaciones != null && Model.Habitaciones.Any())
+        {
+            <br />
+
+            <br />
+            <table class="table table-striped border">
+                <tr class="table-secondary">
+                    <th>
+                        @Html.DisplayNameFor(m => m.Habitaciones.First().NumHabitacion)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(m => m.Habitaciones.First().TipoHabitacion)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(m => m.Habitaciones.First().Tarifa)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(m => m.Habitaciones.First().CantidadPersonas)
+                    </th>
+                </tr>
+                @foreach (var item in Model.Habitaciones)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(m => item.NumHabitacion)
+                        </td>
+                        <td>
+                            @Html.DisplayNameFor(m => item.TipoHabitacion)
+                        </td>
+                        <td>
+                            @Html.DisplayNameFor(m => item.Tarifa)
+                        </td>
+                        <td>
+                            @Html.DisplayNameFor(m => item.CantidadPersonas)
+                        </td>
+                        <td>
+                            <a asp-route-id="@item.NumHabitacion" asp-page="/Reservas/CrearReservas" class="btn btn-success btn-sm">Reservar</a>
+                        </td>
+                    </tr>
+                }
+            </table>
+
+        }
+        else
+        {
+            <p>No hay habitaciones disponibles</p>
+        }
+    </div>
+</div>
+
+

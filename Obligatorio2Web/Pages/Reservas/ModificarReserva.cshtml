@@ -1,0 +1,59 @@
+﻿@page
+@model Obligatorio2Web.Pages.Reservas.ModificarReservaModel
+@{
+	ViewData["Titulo"] = "Modificación de Reserva";
+}
+<div class="card">
+	<div class="card-header">
+		<h2 class="text-info">Modificar Reserva</h2>
+	</div>
+	<div class="card-body">
+		<form method="post">
+			<div asp-validation-summary="ModelOnly" class="textdanger"></div>
+			<!-- Se usa asp-for para vincular el campo oculto al Id del
+			Curso -->
+			<input type="hidden" asp-for="Reserva.IdReserva" />
+			<div class="container" style="padding: 30px">
+				<div class="form-group row">
+					<label class="col-sm-2 col-form-label" aspfor="Curso.Nombre"></label>
+					<div class="col-sm-6">
+						<input asp-for="Reserva.NumHabitacion" class="form-control
+mb-2" />
+						<span asp-validation-for="Reserva.NumHabitacion" class="textdanger"></span>
+					</div>
+				</div>
+				<div class="form-group row">
+					<label class="col-sm-2 col-form-label" aspfor="Curso.Cantidad"></label>
+					<div class="col-sm-6">
+						<input asp-for="Reserva.FechaInicio" class="form-control
+mb-2" />
+						<span asp-validation-for="Reserva.FechaInicio"
+							  class="text-danger"></span>
+					</div>
+				</div>
+				<div class="form-group row">
+					<label class="col-sm-2 col-form-label" aspfor="Curso.Precio"></label>
+					<div class="col-sm-6">
+						<input asp-for="Reserva.FechaFinal" class="form-control
+mb-2" />
+						<span asp-validation-for="Reserva.FechaFinal" class="textdanger"></span>
+					</div>
+				</div>
+				<div class="form-group row">
+					<div class="col-sm-6 offset-sm-2">
+						<div class="row">
+							<div class="col-sm-6">
+								<input type="submit" value="Editar"
+									   class="btn btn-primary btn-block" />
+								60
+							</div>
+							<div class="col-sm-6 text-right">
+								<a asp-page="Index" class="btn btnsuccess">Volver a la lista</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
