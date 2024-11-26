@@ -25,12 +25,12 @@ namespace Obligatorio2Web.Pages.Reservas
         {
             if (ModelState.IsValid)
             {
-                var ReservaDesdeBD = await _contexto.Reservas.FindAsync(Reserva.IdReserva);
-                if (ReservaDesdeBD != null)
+                var ReservaEnBD = await _contexto.Reservas.FindAsync(Reserva.IdReserva);
+                if (ReservaEnBD != null)
                 {
-                    ReservaDesdeBD.NumHabitacion = Reserva.NumHabitacion;
-                    ReservaDesdeBD.FechaInicio = Reserva.FechaInicio;
-                    ReservaDesdeBD.FechaFinal = Reserva.FechaFinal;
+                    ReservaEnBD.NumHabitacion = Reserva.NumHabitacion;
+                    ReservaEnBD.FechaInicio = Reserva.FechaInicio;
+                    ReservaEnBD.FechaFinal = Reserva.FechaFinal;
                     await _contexto.SaveChangesAsync();
                     Message = "Reserva modificada correctamente.";
                     return RedirectToPage("PaginaReservas");

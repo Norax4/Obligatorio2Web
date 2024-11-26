@@ -11,7 +11,7 @@
         </div>
     </div>
     <div class="card-body">
-        <form>
+        <form method="post">
             @if (Model.Reservas != null && Model.Reservas.Any())
             {
                 <br />
@@ -51,7 +51,7 @@
                                 @Html.DisplayNameFor(m => item.FechaReserva)
                             </td>
                             <td>
-                                <a asp-route-id="@item.IdReserva" asp-page="/ModificarReserva" class="btn btn-success btn-sm">Modificar Reserva</a>
+                                <a asp-route-id="@item.IdReserva" asp-page="/ModificarReserva" class="btn btn-primary btn-sm">Modificar Reserva</a>
                                 <button asp-page-handler="Borrar" asp-route-itemid="@item.IdReserva" onclick="return confirm('¿Esta seguro de querer borrar el curso?')'" class="btn-danger btn-sm">Borrar</button>
                             </td>
                         </tr>
