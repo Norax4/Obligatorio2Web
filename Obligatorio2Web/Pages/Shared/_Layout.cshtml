@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -28,8 +29,14 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Reservas/CrearReservas">Reservar</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Reservas/PaginaReservas">Sus Reservas</a>
+                        </li>
                     </ul>
                 </div>
+                <select name="usuarios">
+                    <option value=""></option>
+                </select>
             </div>
         </nav>
     </header>
@@ -41,7 +48,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2024 - Obligatorio2Web - <a asp-area="" asp-page="/Privacy">Privacy</a>
+            &copy; 2024 - HotelEstrellaDelMar - <a asp-area="" asp-page="/Privacy">Privacy</a>
         </div>
     </footer>
 
