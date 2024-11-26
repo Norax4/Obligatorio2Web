@@ -32,6 +32,9 @@
                     <th>
                         @Html.DisplayNameFor(m => m.Habitaciones.First().CantidadPersonas)
                     </th>
+                    <th>
+                        Acciones
+                    </th>
                 </tr>
                 @foreach (var item in Model.Habitaciones)
                 {
@@ -49,7 +52,7 @@
                             @Html.DisplayNameFor(m => item.CantidadPersonas)
                         </td>
                         <td>
-                            <a asp-route-id="@item.NumHabitacion" asp-page="/Reservas/CrearReservas" class="btn btn-success btn-sm">Reservar</a>
+                            <a asp-route-id="@item.NumHabitacion" asp-page="/Reservas/CrearReservas" class="btn btn-primary btn-sm">Reservar</a>
                         </td>
                     </tr>
                 }
