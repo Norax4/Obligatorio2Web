@@ -19,7 +19,7 @@ namespace Obligatorio2Web.Modelos
         public Habitacion? HabitacionElegida { get; set; }
 
         [Required]
-        [Range(1,4)]
+        [Range(1,4, ErrorMessage = "La cantidad de huespedes debe ser mayor a cero.")]
         public int NumeroPersonas { get; set; }
 
         [Required]
