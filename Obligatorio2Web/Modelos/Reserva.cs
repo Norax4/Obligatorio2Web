@@ -10,9 +10,9 @@ namespace Obligatorio2Web.Modelos
         public int IdReserva { get; private set; }
 
         [Required]
-        [ForeignKey("Huesped")]
-        public int IdHuesped { get; set; }
-        public Huesped? Huesped { get; set; }
+        [ForeignKey("Usuario")]
+        public int UsuarioId { get; set; }
+        public Usuario Usuario { get; set; }
 
         [ForeignKey("Habitacion")]
         public int NumHabitacion { get; set; }
@@ -33,7 +33,7 @@ namespace Obligatorio2Web.Modelos
         public DateTime FechaReserva { get; set; }
 
         [ForeignKey("Pago")]
-        public int IdPago { get; set; }
-        public Pago? PagoReserva { get; set; }
+        public int PagoId { get; set; }
+        public Pago PagoReserva { get; set; }
     }
 }

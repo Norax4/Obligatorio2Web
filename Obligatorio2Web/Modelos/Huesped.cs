@@ -13,6 +13,15 @@ namespace Obligatorio2Web.Modelos
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IdHuesped { get; private set; }
         [Required]
+        [StringLength(50)]
+        public string? Nombre { get; set; }
+        [Required]
+        [StringLength(100)]
+        public string? Apellidos { get; set; }
+        [Required]
+        [Column(TypeName = "date")]
+        public DateTime FechaNacimiento { get; set; }
+        [Required]
         public string? TipoDocumento { get; set; }
         [Required]
         public int NumDocumento { get; set; }
@@ -21,5 +30,8 @@ namespace Obligatorio2Web.Modelos
         [Required]
         [EmailAddress]
         public string? CorreoElec { get; set; }
+        [ForeignKey("Usuario")]
+        public int UsuarioId { get; set; }
+        public Usuario Usuario { get; set; }
     }
 }

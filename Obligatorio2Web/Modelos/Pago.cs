@@ -9,8 +9,6 @@ namespace Obligatorio2Web.Modelos
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IdPago { get; private set; }
         [Required]
-        [ForeignKey("Reserva")]
-        public int IdReserva { get; set; }
         public Reserva? Reserva { get; set; }
         [Required]
         [Column(TypeName = "date")]
