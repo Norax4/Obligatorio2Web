@@ -13,7 +13,7 @@
         </div>
     </div>
     <div class="card-body">
-        @if (Model.Habitaciones != null && Model.Habitaciones.Any())
+        @if (Model.HabitacionesL != null && Model.HabitacionesL.Any())
         {
             <br />
 
@@ -21,22 +21,19 @@
             <table class="table table-striped border">
                 <tr class="table-secondary">
                     <th>
-                        @Html.DisplayNameFor(m => m.Habitaciones.First().NumHabitacion)
+                        @Html.DisplayNameFor(m => m.HabitacionesL.First().NumHabitacion)
                     </th>
                     <th>
-                        @Html.DisplayNameFor(m => m.Habitaciones.First().TipoHabitacion)
+                        @Html.DisplayNameFor(m => m.HabitacionesL.First().TipoHabitacion)
                     </th>
                     <th>
-                        @Html.DisplayNameFor(m => m.Habitaciones.First().Tarifa)
+                        @Html.DisplayNameFor(m => m.HabitacionesL.First().Tarifa)
                     </th>
                     <th>
-                        @Html.DisplayNameFor(m => m.Habitaciones.First().CantidadPersonas)
-                    </th>
-                    <th>
-                        Acciones
+                        @Html.DisplayNameFor(m => m.HabitacionesL.First().CantidadPersonas)
                     </th>
                 </tr>
-                @foreach (var item in Model.Habitaciones)
+                @foreach (var item in Model.HabitacionesL)
                 {
                     <tr>
                         <td>
@@ -50,9 +47,6 @@
                         </td>
                         <td>
                             @Html.DisplayNameFor(m => item.CantidadPersonas)
-                        </td>
-                        <td>
-                            <a asp-route-id="@item.NumHabitacion" asp-page="/Reservas/CrearReservas" class="btn btn-primary btn-sm">Reservar</a>
                         </td>
                     </tr>
                 }

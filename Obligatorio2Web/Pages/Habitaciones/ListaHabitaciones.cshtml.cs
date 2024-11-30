@@ -13,10 +13,10 @@ namespace Obligatorio2Web.Pages.Habitaciones
         {
             _contexto = contexto;
         }
-        public IEnumerable<Habitacion> Habitaciones { get; set; }
+        public IEnumerable<Habitacion> HabitacionesL { get; set; }
         public async Task OnGet()
         {
-            Habitaciones = await _contexto.Habitaciones.ToListAsync();
+            HabitacionesL = await _contexto.Habitaciones.ToListAsync();
         }
     }
 }
