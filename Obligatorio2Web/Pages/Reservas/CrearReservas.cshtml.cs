@@ -15,27 +15,13 @@ namespace Obligatorio2Web.Pages.Reservas
 		}
 		[BindProperty] //Esto vincula la pagina con el modelo >>>
 		public Reserva Reserva { get; set; }
-
-		public Habitacion Habitacion { get; set; }
 		public IEnumerable<Habitacion> HabsForEach { get; set; }
 		[TempData]
 		public string Message { get; set; }
 
-		/*public async Task OnGet()
+		public async Task OnGet()
 		{
 			HabsForEach = await _contexto.Habitaciones.ToListAsync();
-		}*/
-		
-		public async Task OnGet(int id)
-		{
-			HabsForEach = await _contexto.Habitaciones.ToListAsync();
-
-			Habitacion = await _contexto.Habitaciones.FindAsync(id);
-
-			if (Habitacion != null)
-			{
-				Reserva.NumHabitacion = Habitacion.NumHabitacion;
-			}
 		}
 
 		public async Task<IActionResult> OnPost()

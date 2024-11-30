@@ -13,7 +13,7 @@ namespace Obligatorio2Web.Pages.Reservas
         {
             _contexto = contexto;
         }
-        public IEnumerable<Reserva> Reservas { get; set; }
+        public IEnumerable<Reserva>? Reservas { get; set; }
         [TempData]
         public string Message { get; set; }
         public async Task OnGet()
